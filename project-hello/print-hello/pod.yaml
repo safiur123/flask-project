@@ -1,0 +1,17 @@
+# deployment.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: print-hello-world
+  labels:
+    name: print-hello-world
+    app: demo-print-hello-world
+spec:
+ containers:
+   - name: print-hello-world
+     image: print-hello-world:latest
+     imagePullPolicy: Never
+     ports:
+       - containerPort: 5000
+

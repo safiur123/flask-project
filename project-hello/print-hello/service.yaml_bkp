@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: print-hello-world-svc
+  labels:
+    app: demo-hello-world-app
+spec: 
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    name: print-hello-world
+    app: demo-print-hello-world

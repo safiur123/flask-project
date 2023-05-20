@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rev-hello-world-svc
+  labels:
+    name: rev-hello-world-svc
+    app: demo-hello-world-app
+spec:
+  type: NodePort
+  selector:
+    name: rev-hello-world
+    app: demo-rev-hello-world
+  ports:
+    - port: 5001
+      targetPort: 5001
+      nodePort: 30005
+

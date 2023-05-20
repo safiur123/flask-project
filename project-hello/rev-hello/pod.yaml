@@ -1,0 +1,17 @@
+# deployment.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rev-hello-world
+  labels:
+    name: rev-hello-world
+    app: demo-rev-hello-world
+spec:
+ containers:
+   - name: rev-hello-world
+     image: rev-hello-world:latest
+     imagePullPolicy: Never
+     ports:
+       - containerPort: 5001
+
